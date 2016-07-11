@@ -1,0 +1,29 @@
+{% extends 'AppBundle:Main:index.html.twig' %}
+{% block content %}
+    <table class="">
+        {{ form_start(form) }}
+        <tbody>
+            <tr>
+                <td>
+                    {{ form_row(form.name) }}
+                </td>
+                <td>
+                    {{ form_row(form.description) }}
+                </td>
+                <td>
+                    {{ form_row(form.price) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_row(form.thumbnail) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_end(form) }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

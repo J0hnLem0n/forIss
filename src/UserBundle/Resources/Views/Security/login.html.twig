@@ -1,0 +1,21 @@
+{% extends 'AppBundle:Main:index.html.twig' %}
+{% block content %}
+    {% if error %}
+        <div>{{ error.message }}</div>
+    {% endif %}
+    <form action="{{ path('fos_user_security_check') }}" method="post">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        <label for="username">Email:</label>
+        <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" />
+
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="_password" />
+
+        <input type="hidden" name="_target_path" value="homePage" />
+
+        <input type="submit" class="btn btn-success" name="login" value="Login"/>
+    </form>
+    <p><a href="{{ path('fos_user_resetting_request') }}">Reset my password</a></p>
+    <p><a href="{{ path('fos_user_registration_register') }}">Register</a></p>
+    <p><a href="{{ url("hwi_oauth_service_redirect", {service: "facebook"})}}">Facebook</a></p>
+{% endblock %}

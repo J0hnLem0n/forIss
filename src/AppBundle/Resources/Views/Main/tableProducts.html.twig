@@ -1,0 +1,27 @@
+{% extends 'AppBundle:Main:index.html.twig' %}
+{% block content %}
+    {{ form_start(form) }}
+    {{ form_end(form) }}
+    <table class="table">
+        <tbody>
+        {% for products in productsData %}
+            <tr>
+                {#{{ dump(studentRateData)}}#}
+                <td>
+                {% if products.thumbnail%}
+                    <img src="{{ asset(thumbnail_dir~products.thumbnail) }}" width="60px" height="40px">
+                {% endif %}
+                </td>
+                <td>{{ products.name }}</td>
+                <td>{{ products.description }}</td>
+                <td>{{ products.price }}</td>
+                {% if is_granted("ROLE_ADMIN")%}
+                    <td>{{ products.user.username }}({{ products.user.email }})</td>
+                {% endif %}
+                <td><a href={{ path('editProduct', {'id':products.id}) }} ><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a href={{ path('deleteProduct', {'id':products.id}) }} ><span class="glyphicon glyphicon-remove"></span></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

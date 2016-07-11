@@ -1,0 +1,16 @@
+homePage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index}
+addProduct:
+    path:     /addProduct
+    defaults: { _controller: AppBundle:Product:add}
+editProduct:
+    path:     /editProduct/{id}
+    defaults: { _controller: AppBundle:Product:edit}
+deleteProduct:
+    path:     /deleteProduct/{id}
+    defaults: { _controller: AppBundle:Product:delete}
+profile:
+    path:     /profile
+    defaults: {_controller: UserBundle:Profile:edit}
+

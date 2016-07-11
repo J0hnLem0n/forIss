@@ -1,0 +1,24 @@
+form {
+    margin : 10px;
+}
+form {
+    margin : 10px;
+}
+form label {
+    margin : 10px;
+}
+form input[type="text"],input[type="password"],select  {
+    width: 200px !important;
+}
+form input[type="submit"],button {
+    margin-top: 10px !important;
+}
+.navbar {
+    border-radius: 0px;
+}
+.glyphicon-remove {
+    color: #AA3333;
+}
+.glyphicon-pencil {
+    color: #080808;
+}
